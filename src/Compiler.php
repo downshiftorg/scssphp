@@ -943,9 +943,9 @@ class Compiler
             case 'mixin_content':
                 $content = $this->get(self::$namespaces['special'] . 'content');
 
-                if (!isset($content)) {
-                    $this->throwError('Expected @content inside of mixin');
-                }
+		if (!is_object($content)) {
+                    return;
+		}
 
                 $strongTypes = array('include', 'block', 'for', 'while');
 
