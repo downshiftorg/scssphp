@@ -1244,7 +1244,7 @@ class Compiler
         if (isset(self::$unitTable['in'][$unit])) {
             $conv = self::$unitTable['in'][$unit];
 
-            return array('number', $value / $conv, 'in');
+            return array('number', (float) $value / (float) $conv, 'in');
         }
 
         return $number;
